@@ -7,13 +7,17 @@ import {
   TabListProps,
 } from 'expo-router/ui';
 import { SymbolView } from 'expo-symbols';
+import { Compass, Home, QrCode, type LucideIcon } from 'lucide-react-native';
 import { Pressable, useColorScheme, View, StyleSheet } from 'react-native';
 
 import { ExternalLink } from './external-link';
 import { ThemedText } from './themed-text';
 import { ThemedView } from './themed-view';
+import { Wordmark } from './wordmark';
 
 import { Colors, MaxContentWidth, Spacing } from '@/constants/theme';
+
+const ACCENT = '#dc3148';
 
 export default function AppTabs() {
   return (
@@ -22,13 +26,13 @@ export default function AppTabs() {
       <TabList asChild>
         <CustomTabList>
           <TabTrigger name="home" href="/" asChild>
-            <TabButton>Home</TabButton>
+            <TabButton icon={Home}>Home</TabButton>
           </TabTrigger>
           <TabTrigger name="scan" href="/scan" asChild>
-            <TabButton>Escanear</TabButton>
+            <TabButton icon={QrCode}>Escanear</TabButton>
           </TabTrigger>
           <TabTrigger name="explore" href="/explore" asChild>
-            <TabButton>Explore</TabButton>
+            <TabButton icon={Compass}>Explore</TabButton>
           </TabTrigger>
         </CustomTabList>
       </TabList>
@@ -36,12 +40,20 @@ export default function AppTabs() {
   );
 }
 
-export function TabButton({ children, isFocused, ...props }: TabTriggerSlotProps) {
+interface TabButtonProps extends TabTriggerSlotProps {
+  icon: LucideIcon;
+}
+
+export function TabButton({ children, isFocused, icon: Icon, ...props }: TabButtonProps) {
+  const scheme = useColorScheme();
+  const colors = Colors[scheme === 'unspecified' ? 'light' : scheme];
+
   return (
     <Pressable {...props} style={({ pressed }) => pressed && styles.pressed}>
       <ThemedView
         type={isFocused ? 'backgroundSelected' : 'backgroundElement'}
         style={styles.tabButtonView}>
+        <Icon size={16} color={isFocused ? ACCENT : colors.textSecondary} />
         <ThemedText type="small" themeColor={isFocused ? 'text' : 'textSecondary'}>
           {children}
         </ThemedText>
@@ -57,9 +69,9 @@ export function CustomTabList(props: TabListProps) {
   return (
     <View {...props} style={styles.tabListContainer}>
       <ThemedView type="backgroundElement" style={styles.innerContainer}>
-        <ThemedText type="smallBold" style={styles.brandText}>
-          Expo Starter
-        </ThemedText>
+        <View style={styles.brandText}>
+          <Wordmark markSize={24} textSize={16} />
+        </View>
 
         {props.children}
 
@@ -104,6 +116,9 @@ const styles = StyleSheet.create({
     opacity: 0.7,
   },
   tabButtonView: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: Spacing.one,
     paddingVertical: Spacing.one,
     paddingHorizontal: Spacing.three,
     borderRadius: Spacing.three,

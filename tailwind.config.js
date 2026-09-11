@@ -38,8 +38,15 @@ module.exports = {
         'auth-gradient-start': '#8a3468',
         'auth-gradient-end': '#48102c',
       },
+      // React Native no sintetiza pesos a partir de un solo archivo de
+      // fuente (a diferencia de "Figtree Variable" en la web): cada peso
+      // cargado en `_layout.tsx` necesita su propia utilidad de Tailwind,
+      // si no `font-medium`/`font-semibold`/`font-bold` no tienen efecto.
       fontFamily: {
         sans: ['Figtree_400Regular'],
+        'sans-medium': ['Figtree_500Medium'],
+        'sans-semibold': ['Figtree_600SemiBold'],
+        'sans-bold': ['Figtree_700Bold'],
         heading: ['Caprasimo_400Regular'],
       },
       borderRadius: {

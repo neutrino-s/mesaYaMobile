@@ -90,7 +90,7 @@ export default function LoginScreen() {
 
             <View className="mt-8 gap-5">
               <View className="gap-2">
-                <Text className="font-sans text-sm font-medium text-foreground">Correo electrónico</Text>
+                <Text className="font-sans-medium text-sm text-foreground">Correo electrónico</Text>
                 <TextInput
                   value={email}
                   onChangeText={(value) => {
@@ -106,7 +106,7 @@ export default function LoginScreen() {
               </View>
 
               <View className="gap-2">
-                <Text className="font-sans text-sm font-medium text-foreground">Contraseña</Text>
+                <Text className="font-sans-medium text-sm text-foreground">Contraseña</Text>
                 <View className="relative justify-center">
                   <TextInput
                     value={password}
@@ -148,7 +148,7 @@ export default function LoginScreen() {
                 </Pressable>
 
                 <Pressable className="ml-auto" hitSlop={8}>
-                  <Text className="font-sans text-sm font-medium text-accent">¿Olvidaste tu contraseña?</Text>
+                  <Text className="font-sans-medium text-sm text-accent">¿Olvidaste tu contraseña?</Text>
                 </Pressable>
               </View>
 
@@ -166,7 +166,7 @@ export default function LoginScreen() {
                 {submitting ? (
                   <Spinner size={20} />
                 ) : (
-                  <Text className="font-sans text-[15px] font-medium text-white">Ingresar</Text>
+                  <Text className="font-sans-medium text-[15px] text-white">Ingresar</Text>
                 )}
               </Pressable>
             </View>
@@ -179,7 +179,7 @@ export default function LoginScreen() {
 
             <Link href="/register" asChild>
               <Pressable className="h-13 items-center justify-center rounded-md border border-input bg-card active:bg-muted/60">
-                <Text className="font-sans text-[15px] font-medium text-foreground">
+                <Text className="font-sans-medium text-[15px] text-foreground">
                   Registrarme
                 </Text>
               </Pressable>

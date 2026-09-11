@@ -98,7 +98,7 @@ export default function RegisterScreen() {
 
             <View className="mt-8 gap-5">
               <View className="gap-2">
-                <Text className="font-sans text-sm font-medium text-foreground">Nombre</Text>
+                <Text className="font-sans-medium text-sm text-foreground">Nombre</Text>
                 <Controller
                   control={control}
                   name="nombre"
@@ -121,7 +121,7 @@ export default function RegisterScreen() {
               </View>
 
               <View className="gap-2">
-                <Text className="font-sans text-sm font-medium text-foreground">Apellido</Text>
+                <Text className="font-sans-medium text-sm text-foreground">Apellido</Text>
                 <Controller
                   control={control}
                   name="apellido"
@@ -144,7 +144,7 @@ export default function RegisterScreen() {
               </View>
 
               <View className="gap-2">
-                <Text className="font-sans text-sm font-medium text-foreground">Correo electrónico</Text>
+                <Text className="font-sans-medium text-sm text-foreground">Correo electrónico</Text>
                 <Controller
                   control={control}
                   name="email"
@@ -168,7 +168,7 @@ export default function RegisterScreen() {
               </View>
 
               <View className="gap-2">
-                <Text className="font-sans text-sm font-medium text-foreground">Contraseña</Text>
+                <Text className="font-sans-medium text-sm text-foreground">Contraseña</Text>
                 <Controller
                   control={control}
                   name="password"
@@ -203,7 +203,7 @@ export default function RegisterScreen() {
               </View>
 
               <View className="gap-2">
-                <Text className="font-sans text-sm font-medium text-foreground">Repetir contraseña</Text>
+                <Text className="font-sans-medium text-sm text-foreground">Repetir contraseña</Text>
                 <Controller
                   control={control}
                   name="confirmPassword"
@@ -253,7 +253,7 @@ export default function RegisterScreen() {
                 {submitting ? (
                   <Spinner size={20} />
                 ) : (
-                  <Text className="font-sans text-[15px] font-medium text-white">Crear cuenta</Text>
+                  <Text className="font-sans-medium text-[15px] text-white">Crear cuenta</Text>
                 )}
               </Pressable>
             </View>
@@ -261,7 +261,7 @@ export default function RegisterScreen() {
             <View className="mt-6 flex-row justify-center gap-1.5">
               <Text className="font-sans text-[13px] text-muted-foreground">¿Ya tenés cuenta?</Text>
               <Link href="/login" replace>
-                <Text className="font-sans text-[13px] font-medium text-accent">Iniciar sesión</Text>
+                <Text className="font-sans-medium text-[13px] text-accent">Iniciar sesión</Text>
               </Link>
             </View>
           </View>

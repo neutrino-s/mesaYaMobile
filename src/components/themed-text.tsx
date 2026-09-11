@@ -30,40 +30,46 @@ export function ThemedText({ style, type = 'default', themeColor, ...rest }: The
   );
 }
 
+// Dos familias con roles separados, como en el web (`font-sans`/`font-heading`
+// de `tailwind.config.js`): Caprasimo para títulos, Figtree para el resto.
+// React Native no sintetiza pesos a partir de un solo archivo, así que cada
+// peso usa el nombre exacto cargado en `_layout.tsx` en vez de `fontWeight`.
 const styles = StyleSheet.create({
   small: {
+    fontFamily: 'Figtree_500Medium',
     fontSize: 14,
     lineHeight: 20,
-    fontWeight: 500,
   },
   smallBold: {
+    fontFamily: 'Figtree_700Bold',
     fontSize: 14,
     lineHeight: 20,
-    fontWeight: 700,
   },
   default: {
+    fontFamily: 'Figtree_500Medium',
     fontSize: 16,
     lineHeight: 24,
-    fontWeight: 500,
   },
   title: {
+    fontFamily: 'Caprasimo_400Regular',
     fontSize: 48,
-    fontWeight: 600,
     lineHeight: 52,
   },
   subtitle: {
+    fontFamily: 'Caprasimo_400Regular',
     fontSize: 32,
     lineHeight: 44,
-    fontWeight: 600,
   },
   link: {
+    fontFamily: 'Figtree_400Regular',
     lineHeight: 30,
     fontSize: 14,
   },
   linkPrimary: {
+    fontFamily: 'Figtree_400Regular',
     lineHeight: 30,
     fontSize: 14,
-    color: '#3c87f7',
+    color: '#dc3148', // accent
   },
   code: {
     fontFamily: Fonts.mono,
