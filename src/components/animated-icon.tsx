@@ -1,3 +1,4 @@
+import { LinearGradient } from 'expo-linear-gradient';
 import { Image } from 'expo-image';
 import * as SplashScreen from 'expo-splash-screen';
 import { useState } from 'react';
@@ -33,7 +34,15 @@ export function AnimatedSplashOverlay() {
     },
   });
 
-  const image = <Image style={styles.image} source={require('@/assets/images/expo-logo.png')} />;
+  const image = <Image style={styles.splashImage} source={require('@/assets/images/logo.png')} />;
+  const gradient = (
+    <LinearGradient
+      colors={['#8a3468', '#48102c']}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 1 }}
+      style={StyleSheet.absoluteFill}
+    />
+  );
 
   return animate ? (
     <Animated.View
@@ -44,6 +53,7 @@ export function AnimatedSplashOverlay() {
         }
       })}
       style={styles.splashOverlay}>
+      {gradient}
       {image}
     </Animated.View>
   ) : (
@@ -54,6 +64,7 @@ export function AnimatedSplashOverlay() {
         });
       }}
       style={styles.splashOverlay}>
+      {gradient}
       {image}
     </View>
   );
@@ -131,6 +142,10 @@ const styles = StyleSheet.create({
     width: 76,
     height: 71,
   },
+  splashImage: {
+    width: 110,
+    height: 110,
+  },
   background: {
     borderRadius: 40,
     experimental_backgroundImage: `linear-gradient(180deg, #3C9FFE, #0274DF)`,
@@ -140,7 +155,7 @@ const styles = StyleSheet.create({
   },
   splashOverlay: {
     ...StyleSheet.absoluteFill,
-    backgroundColor: '#208AEF',
+    backgroundColor: '#48102c',
     alignItems: 'center',
     justifyContent: 'center',
     zIndex: 1000,
