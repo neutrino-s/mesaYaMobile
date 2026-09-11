@@ -87,9 +87,6 @@ export default function LoginScreen() {
           {/* Formulario */}
           <View className="flex-1 px-6 pb-10 pt-8">
             <Text className="font-heading text-[2rem] text-foreground">Iniciar sesión</Text>
-            <Text className="mt-1.5 font-sans text-[15px] text-muted-foreground">
-              Accedé al panel de tu restaurante.
-            </Text>
 
             <View className="mt-8 gap-5">
               <View className="gap-2">
@@ -101,8 +98,6 @@ export default function LoginScreen() {
                     setFormError(null);
                     clearError();
                   }}
-                  placeholder="tu@restaurante.com"
-                  placeholderTextColor={MUTED_FOREGROUND}
                   keyboardType="email-address"
                   autoCapitalize="none"
                   autoComplete="email"
@@ -120,8 +115,6 @@ export default function LoginScreen() {
                       setFormError(null);
                       clearError();
                     }}
-                    placeholder="••••••••"
-                    placeholderTextColor={MUTED_FOREGROUND}
                     secureTextEntry={obscurePassword}
                     autoComplete="current-password"
                     className="h-13 rounded-md border border-auth-field-border bg-auth-field-fill px-4 pr-12 font-sans text-[15px] text-foreground"
@@ -187,7 +180,7 @@ export default function LoginScreen() {
             <Link href="/register" asChild>
               <Pressable className="h-13 items-center justify-center rounded-md border border-input bg-card active:bg-muted/60">
                 <Text className="font-sans text-[15px] font-medium text-foreground">
-                  Registrar mi restaurante
+                  Registrarme
                 </Text>
               </Pressable>
             </Link>

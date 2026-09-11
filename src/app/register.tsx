@@ -47,7 +47,7 @@ export default function RegisterScreen() {
       email: values.email,
       password: values.password,
     });
-    if (user) router.replace('/(tabs)/home');
+    if (user) router.replace('/login');
   }
 
   return (
@@ -84,7 +84,7 @@ export default function RegisterScreen() {
             <View className="gap-4 px-6 pb-9">
               <Wordmark onDark markSize={40} textSize={22} />
               <Text className="font-heading text-[1.75rem] leading-9 text-white">
-                Registrá tu restaurante{'\n'}en un par de pasos.
+                Escaneá la carta,{'\n'}pedí en la mesa.
               </Text>
             </View>
           </View>
@@ -93,7 +93,7 @@ export default function RegisterScreen() {
           <View className="flex-1 px-6 pb-10 pt-8">
             <Text className="font-heading text-[2rem] text-foreground">Crear cuenta</Text>
             <Text className="mt-1.5 font-sans text-[15px] text-muted-foreground">
-              Sumá a tu restaurante a MesaYa.
+              Registrate en MesaYa y empezá a escanear las cartas de tus restaurantes favoritos.
             </Text>
 
             <View className="mt-8 gap-5">
@@ -109,8 +109,6 @@ export default function RegisterScreen() {
                         onChange(text);
                         clearError();
                       }}
-                      placeholder="Juan"
-                      placeholderTextColor={MUTED_FOREGROUND}
                       autoCapitalize="words"
                       autoComplete="given-name"
                       className="h-13 rounded-md border border-auth-field-border bg-auth-field-fill px-4 font-sans text-[15px] text-foreground"
@@ -134,8 +132,6 @@ export default function RegisterScreen() {
                         onChange(text);
                         clearError();
                       }}
-                      placeholder="Pérez"
-                      placeholderTextColor={MUTED_FOREGROUND}
                       autoCapitalize="words"
                       autoComplete="family-name"
                       className="h-13 rounded-md border border-auth-field-border bg-auth-field-fill px-4 font-sans text-[15px] text-foreground"
@@ -159,8 +155,6 @@ export default function RegisterScreen() {
                         onChange(text);
                         clearError();
                       }}
-                      placeholder="tu@restaurante.com"
-                      placeholderTextColor={MUTED_FOREGROUND}
                       keyboardType="email-address"
                       autoCapitalize="none"
                       autoComplete="email"
@@ -186,8 +180,6 @@ export default function RegisterScreen() {
                           onChange(text);
                           clearError();
                         }}
-                        placeholder="••••••••"
-                        placeholderTextColor={MUTED_FOREGROUND}
                         secureTextEntry={obscurePassword}
                         autoComplete="new-password"
                         className="h-13 rounded-md border border-auth-field-border bg-auth-field-fill px-4 pr-12 font-sans text-[15px] text-foreground"
@@ -223,8 +215,6 @@ export default function RegisterScreen() {
                           onChange(text);
                           clearError();
                         }}
-                        placeholder="••••••••"
-                        placeholderTextColor={MUTED_FOREGROUND}
                         secureTextEntry={obscureConfirmPassword}
                         autoComplete="new-password"
                         className="h-13 rounded-md border border-auth-field-border bg-auth-field-fill px-4 pr-12 font-sans text-[15px] text-foreground"
